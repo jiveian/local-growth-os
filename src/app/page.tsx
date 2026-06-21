@@ -1,15 +1,26 @@
-import Container from "@/components/layout/Container";
+import AppShell from "@/components/layout/AppShell";
+import PageHeader from "@/components/layout/PageHeader";
+
+import Button from "@/components/ui/Button";
+import MetricsGrid from "@/features/dashboard/components/MetricsGrid";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen py-20">
-      <Container>
-        <h1 className="text-4xl font-bold">Local Growth OS</h1>
+    <AppShell>
+      <PageHeader
+        title="Dashboard"
+        description="Overview of your business activity."
+        actions={<Button>Add Lead</Button>}
+      />
 
-        <p className="mt-4 text-zinc-600">
-          Growth operating system for local businesses.
-        </p>
-      </Container>
-    </main>
+      {/* ================================== */}
+      {/* Dashboard Metrics */}
+      {/* ================================== */}
+
+      {/* Total Leads */}
+      <div className="p-6">
+        <MetricsGrid />
+      </div>
+    </AppShell>
   );
 }
